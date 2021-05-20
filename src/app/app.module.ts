@@ -18,15 +18,18 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule }
-
+import { TakeNoteComponent } from './components/take-note/take-note.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    TakeNoteComponent,
+    FundooLogoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +46,8 @@ import { RouterModule }
     ReactiveFormsModule,
     FlexLayoutModule,
     MatInputModule,
-    MatButtonModule
-
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

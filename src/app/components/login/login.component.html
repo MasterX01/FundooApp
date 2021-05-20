@@ -1,9 +1,14 @@
 <div fxLayoutAlign="center center" fxLayout="row" fxFill style="top: 50%; left: 50%;">
   <mat-card  fxFlex="40" fxLayoutAlign="space-around" fxLayout="column" style="height: 60%;">
-    <p fxLayoutAlign="center center" style="font-size: xx-large">
-      Sign in
-    </p>
-    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <div fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="30px">
+      <app-fundoo-logo></app-fundoo-logo>
+      <p fxLayoutAlign="center center" style="font-size: xx-large">
+        Sign in
+      </p>
+    </div>
+
+
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="space-around">
       <div fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="space-around">
         <div>
           <mat-form-field appearance="outline" style="width: 170%;">
@@ -22,8 +27,13 @@
         </div>
       </div>
       <div fxLayoutAlign="start center">
-        <a onclick="resetPassword()" style="color: blue;">Forgot Password?</a>
+        <a (click)="createAccount()" style="color: blue;">Create Account</a>
       </div>
+
+      <div fxLayoutAlign="start center">
+        <a (click)="resetPassword()" style="color: blue;">Forgot Password?</a>
+      </div>
+
       <div fxLayoutAlign="end">
         <button type="submit" mat-raised-button color="primary">Submit</button>
       </div>

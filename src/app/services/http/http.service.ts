@@ -23,4 +23,8 @@ export class HttpService {
     console.log(this.baseUrl+url);
     return this.http.post(this.baseUrl+url, data, this.options)
   }
+
+  get(url){
+    return this.http.get(this.baseUrl+url, this.options)
+  }
 }

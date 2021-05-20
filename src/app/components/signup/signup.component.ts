@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +15,9 @@ export class SignupComponent implements OnInit {
   hide = true;
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
-              private userService: UserService) { }
+              private userService: UserService,
+              private router: Router,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(){
     this.form = this.formBuilder.group({
@@ -36,6 +40,8 @@ export class SignupComponent implements OnInit {
       console.log(reqObj);
       this.userService.signup(reqObj).subscribe((response) =>{
         console.log(response);
+        this.snackBar.open(' SignUp Successfull!!! ', '', {duration: 4000});
+        this.router.navigateByUrl('login');
       });
     }
   }

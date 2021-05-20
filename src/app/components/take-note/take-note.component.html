@@ -1,0 +1,21 @@
+<mat-card>
+  <div *ngIf="!clicked" (click)="setClicked()">
+    <a>
+      Take a Note
+    </a>
+  </div>
+</mat-card>
+<mat-card *ngIf="clicked" fxLayout="column">
+
+    <form action="submit" formGroup="form" fxLayout="column">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" formControlName="description">
+      </mat-form-field>
+    </form>
+
+</mat-card>

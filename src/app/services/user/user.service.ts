@@ -14,4 +14,8 @@ export class UserService {
   signup(data){
     return this.http.signup('user/userSignUp', data)
   }
+
+  getAllNotes(id){
+    return this.http.get('user/'+id+'notes')
+  }
 }
