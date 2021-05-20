@@ -21,6 +21,6 @@ export class HttpService {
 
   signup(url, data){
     console.log(this.baseUrl+url);
-    return this.http.post(this.baseUrl+url, this.options, data)
+    return this.http.post(this.baseUrl+url, data, this.options)
   }
 }
