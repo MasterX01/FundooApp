@@ -16,6 +16,10 @@ export class UserService {
   }
 
   getAllNotes(id){
-    return this.http.get('user/'+id+'notes')
+    return this.http.get('user/'+id+'/notes')
+  }
+
+  takeNewNote(id,data){
+    return this.http.post('user/'+id+'/notes', data)
   }
 }

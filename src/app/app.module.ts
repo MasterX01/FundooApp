@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TakeNoteComponent } from './components/take-note/take-note.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
+import { GetNotesComponent } from './components/get-notes/get-notes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.compon
     SignupComponent,
     DashboardComponent,
     TakeNoteComponent,
-    FundooLogoComponent
+    FundooLogoComponent,
+    GetNotesComponent
   ],
   imports: [
     BrowserModule,

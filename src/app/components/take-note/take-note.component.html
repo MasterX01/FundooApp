@@ -1,21 +1,22 @@
-<mat-card>
-  <div *ngIf="!clicked" (click)="setClicked()">
+<mat-card fxLayoutAlign="start center">
+  <div *ngIf="!clicked" (click)="setClicked()" style="width: 500px;">
     <a>
       Take a Note
     </a>
   </div>
-</mat-card>
-<mat-card *ngIf="clicked" fxLayout="column">
-
-    <form action="submit" formGroup="form" fxLayout="column">
-      <mat-form-field>
+  <div *ngIf="clicked" fxLayout="column" fxLayoutGap="30px">
+    <form action="submit" [formGroup]="form" fxLayout="column" (ngSubmit)="onSubmit()" fxLayoutGap="30px">
+      <mat-form-field style="width: 500px;">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" formControlName="title">
+        <input matInput placeholder="Title" formControlName="title" >
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field style="width: 500px;">
         <mat-label>Description</mat-label>
         <input matInput placeholder="Description" formControlName="description">
       </mat-form-field>
+      <div fxLayout="center center">
+        <button type="submit" mat-raised-button color="primary">Add</button>
+      </div>
     </form>
-
+  </div>
 </mat-card>

@@ -13,8 +13,15 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content fxLayoutAlign="center" style="top: 5%;">
-      <app-take-note></app-take-note>
-    </mat-sidenav-content>
+    <mat-sidenav-content style="top: 5%;">
+      <div fxLayoutAlign="center" style="top: 5%;">
+        <app-take-note></app-take-note>
+      </div>
+      <div fxLayoutAlign="center">
+        <app-get-notes></app-get-notes>
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+      </mat-sidenav-content>
+
   </mat-sidenav-container>
 </div>

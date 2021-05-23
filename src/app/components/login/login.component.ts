@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         email: this.form.value.email,
         password: this.form.value.password
       }
-      this.userService.login(reqObj).subscribe((response)=> {
+      this.userService.login(reqObj).subscribe((response: any)=> {
         console.log(response);
         localStorage.setItem('token', response.userId);
         localStorage.setItem('id', response.id);

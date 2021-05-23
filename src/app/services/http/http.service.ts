@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HttpService {
+  token = localStorage.getItem('token')
   options = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': this.token
     })
   };
 
@@ -26,5 +28,9 @@ export class HttpService {
 
   get(url){
     return this.http.get(this.baseUrl+url, this.options)
+  }
+
+  post(url, data){
+    return this.http.post(this.baseUrl+url, data, this.options)
   }
 }
