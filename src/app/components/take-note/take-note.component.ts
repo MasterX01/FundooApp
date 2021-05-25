@@ -9,6 +9,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class TakeNoteComponent implements OnInit {
 
+  title = null
+  description = null
   clicked=false;
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
@@ -17,10 +19,6 @@ export class TakeNoteComponent implements OnInit {
   @Output() sendEvent = new EventEmitter<string>();
 
   ngOnInit(){
-    this.form = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required]
-    });
   }
 
   setClicked(){
@@ -28,19 +26,26 @@ export class TakeNoteComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.form.valid){
-      const reqObj = {
-        title: this.form.value.title,
-        description: this.form.value.description,
-        userId: localStorage.getItem('token'),
-      }
+    const reqObj = {
+      title: this.title,
+      description: this.description,
+      userId: localStorage.getItem('token'),
+    }
+    if(reqObj.title == null && reqObj.description == null){
+      this.title = null
+      this.description = null
+      this.clicked = !this.clicked
+    }else{
       console.log(reqObj);
       this.http.takeNewNote(localStorage.getItem('token'), reqObj).subscribe((response) => {
-        console.log(response);
+      console.log(response);
         this.sendEvent.emit();
       });
+      this.title = null
+      this.description = null
+      this.clicked = !this.clicked
     }
-    this.clicked = !this.clicked
+
   }
 
 }

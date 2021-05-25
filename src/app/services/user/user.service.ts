@@ -9,6 +9,7 @@ export class UserService {
   constructor(private http: HttpService) { }
 
   login(data){
+    console.log(data);
     return this.http.login('user/login', data)
   }
   signup(data){

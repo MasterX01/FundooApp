@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,6 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import { AllNotesComponent } from './components/all-notes/all-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +60,9 @@ import { IconsComponent } from './components/icons/icons.component';
     MatDialogModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

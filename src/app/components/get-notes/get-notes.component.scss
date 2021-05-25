@@ -4,3 +4,9 @@
   min-height: 150px;
   max-height: 350px;
 }
+.card-div mat-card-footer.footer {
+  visibility: hidden;
+}
+.card-div:hover mat-card-footer.footer  {
+  visibility: visible;
+}

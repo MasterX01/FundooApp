@@ -19,15 +19,10 @@ export class IconsComponent implements OnInit {
   archiveNote(){
 
     let data = {
-      // cardidList:this.cardId,
       noteIdList: [this.noteRecieved.id],
-      isArchived:  true //this.isArchived,
+      isArchived:  true
     }
 
-    // this.noteRecieved.isArchived = true
-    // const newNote = this.noteRecieved
-    // console.log(newNote)
-    // console.log(this.noteRecieved);
     this.noteService.noteToArchive(data).subscribe((response) => {
       console.log(response);
       this.sendEvent.emit();
@@ -39,13 +34,9 @@ export class IconsComponent implements OnInit {
   deleteNote(){
 
     let data = {
-      // cardidList:this.cardId,
       noteIdList: [this.noteRecieved.id],
-      isDeleted:  true //this.isArchived,
+      isDeleted:  true
     }
-
-    // this.noteRecieved.isDeleted = true
-    // console.log(this.noteRecieved);
 
     this.noteService.noteToTrash(data).subscribe((response) => {
       console.log(response);

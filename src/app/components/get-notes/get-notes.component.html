@@ -1,6 +1,5 @@
-<div fxLayout="row-wrap">
-<div *ngFor="let note of notes" style="margin-top: 10%;" >
-  <div > <!--onmouseover="hoverChange()" onmouseout="hoverChange()"-->
+<div fxLayout="row-wrap" fxLayoutGap="20px" style="margin-top: 5%;">
+  <div *ngFor="let note of notes">
     <mat-card class="card-div" fxLayout="column" fxLayoutAlign="space-between">
       <div (click)="updateNote(note)" >
         <mat-card-title style="margin-bottom: 20px;">
@@ -11,11 +10,10 @@
         </mat-card-content>
       </div>
       <div>
-        <mat-card-footer > <!--*ngIf="hover"-->
+        <mat-card-footer class="footer"> <!--*ngIf="hover"-->
           <app-icons [noteRecieved]="note"></app-icons>
         </mat-card-footer>
       </div>
     </mat-card>
   </div>
-</div>
 </div>

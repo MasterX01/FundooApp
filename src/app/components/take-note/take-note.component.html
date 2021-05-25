@@ -5,19 +5,19 @@
     </a>
   </div>
   <div *ngIf="clicked" fxLayout="column" fxLayoutGap="30px">
-    <form action="submit" [formGroup]="form" fxLayout="column" (ngSubmit)="onSubmit()" fxLayoutGap="30px">
+    <div fxLayout="column" fxLayoutGap="30px">
       <mat-form-field style="width: 500px;" appearance="outline">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" formControlName="title" >
+        <input matInput placeholder="Title" [(ngModel)]="title" >
       </mat-form-field>
       <mat-form-field style="width: 500px;" appearance="outline">
         <mat-label>Description</mat-label>
-        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+        <textarea matInput placeholder="Description" [(ngModel)]="description"></textarea>
       </mat-form-field>
       <div fxLayout="center center" fxLayoutGap="10px">
         <!-- <app-icons [noteArc]=""></app-icons> -->
-        <button type="submit" mat-raised-button color="primary">Close</button>
+        <button (click)="onSubmit()" mat-raised-button color="primary">Close</button>
       </div>
-    </form>
+    </div>
   </div>
 </mat-card>

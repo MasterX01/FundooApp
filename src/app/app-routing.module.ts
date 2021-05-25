@@ -5,7 +5,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,7 +16,7 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'notes', pathMatch: 'full'},
       {path: 'notes', component: AllNotesComponent}
-    ]
+    ], canActivate: [AuthenticationGuard]
   },
   {path: 'signup', component: SignupComponent}
 ];

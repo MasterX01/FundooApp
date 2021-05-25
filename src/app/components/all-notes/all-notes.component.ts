@@ -17,11 +17,15 @@ export class AllNotesComponent implements OnInit {
 
   getAllNotes(){
     this.note.getAllNotes().subscribe((response: any) =>{
-      console.log(response.data.data);
-      this.allNotes = response.data.data;
+      console.log(response.data.data.filter(this.notDeletedNotArchived));
+      this.allNotes = response.data.data.filter(this.notDeletedNotArchived);
     }, (err) => {
       console.log(err);
     });
+  }
+
+  notDeletedNotArchived(element){
+    return (element.isArchived == false && element.isDeleted == false)
   }
 
   eventRecieved(){
