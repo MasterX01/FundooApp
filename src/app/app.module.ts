@@ -12,7 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,6 +22,10 @@ import { TakeNoteComponent } from './components/take-note/take-note.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 import { GetNotesComponent } from './components/get-notes/get-notes.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AllNotesComponent } from './components/all-notes/all-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { GetNotesComponent } from './components/get-notes/get-notes.component';
     DashboardComponent,
     TakeNoteComponent,
     FundooLogoComponent,
-    GetNotesComponent
+    GetNotesComponent,
+    UpdateNoteComponent,
+    AllNotesComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,9 @@ import { GetNotesComponent } from './components/get-notes/get-notes.component';
     FlexLayoutModule,
     MatInputModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

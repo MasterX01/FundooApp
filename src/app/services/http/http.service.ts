@@ -33,4 +33,8 @@ export class HttpService {
   post(url, data){
     return this.http.post(this.baseUrl+url, data, this.options)
   }
+
+  put(url, data){
+    return this.http.put(this.baseUrl+url, data, this.options)
+  }
 }

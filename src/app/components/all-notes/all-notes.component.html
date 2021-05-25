@@ -1,0 +1,6 @@
+<div fxLayoutAlign="center" style="top: 5%;">
+  <app-take-note (sendEvent)="eventRecieved()"></app-take-note>
+</div>
+<div fxLayoutAlign="center">
+  <app-get-notes [notes]="allNotes" (sendEvent)="eventRecieved()"></app-get-notes>
+</div>

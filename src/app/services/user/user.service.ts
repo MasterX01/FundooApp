@@ -15,11 +15,4 @@ export class UserService {
     return this.http.signup('user/userSignUp', data)
   }
 
-  getAllNotes(id){
-    return this.http.get('user/'+id+'/notes')
-  }
-
-  takeNewNote(id,data){
-    return this.http.post('user/'+id+'/notes', data)
-  }
 }

@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
       }
       this.userService.login(reqObj).subscribe((response: any)=> {
         console.log(response);
-        localStorage.setItem('token', response.userId);
-        localStorage.setItem('id', response.id);
-        console.log(response.userId);
-        console.log(response.id);
+        localStorage.setItem('id', response.userId);
+        localStorage.setItem('token', response.id);
+        console.log('token -> ' + response.userId);
+        console.log('id -> ' + response.id);
         this.snackBar.open(' Login Successfull!!! ', '', {duration: 3000});
         this.router.navigateByUrl('dashboard')
       });

@@ -1,6 +1,6 @@
-import { UserService } from 'src/app/services/user/user.service';
+import { NoteService } from './../../services/notes/note.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-take-note',
@@ -12,7 +12,9 @@ export class TakeNoteComponent implements OnInit {
   clicked=false;
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
-              private http: UserService) { }
+              private http: NoteService) { }
+
+  @Output() sendEvent = new EventEmitter<string>();
 
   ngOnInit(){
     this.form = this.formBuilder.group({
@@ -35,8 +37,10 @@ export class TakeNoteComponent implements OnInit {
       console.log(reqObj);
       this.http.takeNewNote(localStorage.getItem('token'), reqObj).subscribe((response) => {
         console.log(response);
-
+        this.sendEvent.emit();
       });
     }
+    this.clicked = !this.clicked
   }
+
 }

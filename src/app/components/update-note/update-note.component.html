@@ -1,0 +1,13 @@
+<div fxLayout="column">
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <!-- add ng model after api connection -->
+    <input matInput placeholder="Enter your title here" [(ngModel)]="this.title">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <!-- add ng model after api connection -->
+    <textarea matInput [(ngModel)]="this.description" placeholder="Enter your description here"></textarea>
+  </mat-form-field>
+  <button type="button" mat-raised-button color="primary" (click)="updateNote()">Close</button>
+</div>
