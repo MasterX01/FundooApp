@@ -6,24 +6,28 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HttpService {
-  token = localStorage.getItem('token')
+  token = localStorage.getItem('id')
   options = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token
     })
   };
-
+  optionsUser = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
   baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   login(url, data){
-    return this.http.post(this.baseUrl+url, data, this.options)
+    return this.http.post(this.baseUrl+url, data, this.optionsUser)
   }
 
   signup(url, data){
     console.log(this.baseUrl+url);
-    return this.http.post(this.baseUrl+url, data, this.options)
+    return this.http.post(this.baseUrl+url, data, this.optionsUser)
   }
 
   get(url){

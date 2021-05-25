@@ -16,7 +16,7 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'notes', pathMatch: 'full'},
       {path: 'notes', component: AllNotesComponent}
-    ], canActivate: [AuthenticationGuard]
+    ]
   },
   {path: 'signup', component: SignupComponent}
 ];
